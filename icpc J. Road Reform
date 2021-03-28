@@ -54,21 +54,51 @@ const int N=2e5+5,M=1e6+5;
    // int mind[MAXA + 1];
 // map<int,int> xprime;
  struct road{
-    int x,y,s; 
+    int x,y,s,j; 
  };
-
+ll n,m,k,b;
+int g[N+1];int mm=INF;pii mp;
 road* newroad(int a,int b,int c)
 {
     road* temp = new road;
     temp->x = a;
-    temp->y = b;temp->s = c;
+    temp->y = b;temp->s = c;temp->j=abs(k-c);
+    if(mm>temp->j){mm=temp->j;mp={a,b};}
+    if(c<k)temp->j=0;
     return temp;
 }
 
+int find(int a ){
+    if(g[a]==a)return a;
+    else return find(g[a]);
+}
+
+void unio(int a,int b) {
+   int aa=find(a);
+   int bb=find(b);
+   if(aa<bb)g[aa]=bb;
+   else g[bb]=aa;
+}
+
+
 void solve() {
-ll n,m,k,b;ci n>>m>>k ;  
-vector<road*> r(n);
- rep(i,0,m){ int x,y,s; ci x>>y>>s;r[i]= newroad(x,y,s); }
+ci n>>m>>k ;memset(g,0,n);  mm=INF;
+vector<road*> r(m);
+ rep(i,0,m){ int x,y,s; ci x>>y>>s;r[i]= newroad(x,y,s);g[i+1]=i+1 ;} 
+unio(mp.ff,mp.ss);
+//krushkal after minimising 
+int res=mm; 
+sort(all(r),[&](road* a,road* b){
+return a->s<b->s;
+});
+
+
+rep(i,0,sz(r)){
+if(find(r[i]->x)!=find(r[i]->y)){unio(r[i]->x,r[i]->y);
+ res+=r[i]->j;}
+
+}
+DEBUG(res);
 
 }
  
