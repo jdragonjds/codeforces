@@ -44,7 +44,7 @@ using namespace std;
 #define sz(x)           (x).size()
 #define henshin           cout<<endl;
 #define DEBUG(x) cout << (x) << '\n';
-const int INF = int(1e9);
+const ll INF = int(1e9);
 void yn(int x) { if(!x)cout << "NO\n";  else if(x)cout << "YES\n";return; }
 
 const int N=2e5+5,M=1e6+5;
@@ -54,51 +54,52 @@ const int N=2e5+5,M=1e6+5;
    // int mind[MAXA + 1];
 // map<int,int> xprime;
  struct road{
-    int x,y,s,j; 
+    ll x,y,s,j; 
  };
 ll n,m,k,b;
-int g[N+1];int mm=INF;pii mp;
+ll g[N+1][2];ll mm=INF;pii mp;
 road* newroad(int a,int b,int c)
 {
     road* temp = new road;
     temp->x = a;
     temp->y = b;temp->s = c;temp->j=abs(k-c);
     if(mm>temp->j){mm=temp->j;mp={a,b};}
-    if(c<k)temp->j=0;
+    if(c<=k)temp->j=0;
     return temp;
 }
 
-int find(int a ){
-    if(g[a]==a)return a;
-    else return find(g[a]);
+int find(int a,int c ){
+    if(g[a][c]==a)return a;
+    else g[a][c]=find(g[a][c],c);
+        return g[a][c];
 }
 
-void unio(int a,int b) {
-   int aa=find(a);
-   int bb=find(b);
-   if(aa<bb)g[aa]=bb;
-   else g[bb]=aa;
+void unio(int a,int b,int c) {
+  int aa=find(a,c);
+     int bb=find(b,c);
+     if(aa<bb)g[aa][c]=bb;
+     else g[bb][c]=aa; 
 }
 
 
 void solve() {
-ci n>>m>>k ;memset(g,0,n);  mm=INF;
+ci n>>m>>k ;  mm=INT_MAX;
 vector<road*> r(m);
- rep(i,0,m){ int x,y,s; ci x>>y>>s;r[i]= newroad(x,y,s);g[i+1]=i+1 ;} 
-unio(mp.ff,mp.ss);
+ rep(i,0,m){ ll x,y,s; ci x>>y>>s;r[i]= newroad(x,y,s);} 
+ rep(i,0,n+3)g[i+1][0]=i+1,g[i+1][1]=i+1;
+ll res0=0,res1=mm; int f=0;
 //krushkal after minimising 
-int res=mm; 
+ unio(mp.ff,mp.ss,1);
 sort(all(r),[&](road* a,road* b){
 return a->s<b->s;
 });
 
-
+int c=0;
 rep(i,0,sz(r)){
-if(find(r[i]->x)!=find(r[i]->y)){unio(r[i]->x,r[i]->y);
- res+=r[i]->j;}
-
+if(find(r[i]->x,0)!=find(r[i]->y,0)){c++;unio(r[i]->x,r[i]->y,0); res0+=r[i]->j;if(c==n-1 && r[i]->j==0)res0+=abs(r[i]->s-k);}
+if(find(r[i]->x,1)!=find(r[i]->y,1)){unio(r[i]->x,r[i]->y,1); res1+=r[i]->j;}
 }
-DEBUG(res);
+DEBUG(min(res0,res1));
 
 }
  
