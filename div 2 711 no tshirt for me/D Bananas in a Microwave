@@ -1,0 +1,133 @@
+/*     electric love #jdragon
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠤⠖⠚⢉⣩⣭⡭⠛⠓⠲⠦⣄⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢀⡴⠋⠁⠀⠀⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠳⢦⡀⠀⠀⠀⠀
+⠀⠀⠀⠀⢀⡴⠃⢀⡴⢳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣆⠀⠀⠀
+⠀⠀⠀⠀⡾⠁⣠⠋⠀⠈⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢧⠀⠀
+⠀⠀⠀⣸⠁⢰⠃⠀⠀⠀⠈⢣⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣇⠀
+⠀⠀⠀⡇⠀⡾⡀⠀⠀⠀⠀⣀⣹⣆⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⠀
+⠀⠀⢸⠃⢀⣇⡈⠀⠀⠀⠀⠀⠀⢀⡑⢄⡀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇
+⠀⠀⢸⠀⢻⡟⡻⢶⡆⠀⠀⠀⠀⡼⠟⡳⢿⣦⡑⢄⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇
+⠀⠀⣸⠀⢸⠃⡇⢀⠇⠀⠀⠀⠀⠀⡼⠀⠀⠈⣿⡗⠂⠀⠀⠀⠀⠀⠀⠀⢸⠁
+⠀⠀⡏⠀⣼⠀⢳⠊⠀⠀⠀⠀⠀⠀⠱⣀⣀⠔⣸⠁⠀⠀⠀⠀⠀⠀⠀⢠⡟⠀
+⠀⠀⡇⢀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢸⠃⠀
+⠀⢸⠃⠘⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠁⠀⠀⢀⠀⠀⠀⠀⠀⣾⠀⠀
+⠀⣸⠀⠀⠹⡄⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⡞⠀⠀⠀⠸⠀⠀⠀⠀⠀⡇⠀⠀
+⠀⡏⠀⠀⠀⠙⣆⠀⠀⠀⠀⠀⠀⠀⢀⣠⢶⡇⠀⠀⢰⡀⠀⠀⠀⠀⠀⡇⠀⠀
+⢰⠇⡄⠀⠀⠀⡿⢣⣀⣀⣀⡤⠴⡞⠉⠀⢸⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⣧⠀⠀
+⣸⠀⡇⠀⠀⠀⠀⠀⠀⠉⠀⠀⠀⢹⠀⠀⢸⠀⠀⢀⣿⠇⠀⠀⠀⠁⠀⢸⠀⠀
+⣿⠀⡇⠀⠀⠀⠀⠀⢀⡤⠤⠶⠶⠾⠤⠄⢸⠀⡀⠸⣿⣀⠀⠀⠀⠀⠀⠈⣇⠀
+⡇⠀⡇⠀⠀⡀⠀⡴⠋⠀⠀⠀⠀⠀⠀⠀⠸⡌⣵⡀⢳⡇⠀⠀⠀⠀⠀⠀⢹⡀
+⡇⠀⠇⠀⠀⡇⡸⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠮⢧⣀⣻⢂⠀⠀⠀⠀⠀⠀⢧
+⣇⠀⢠⠀⠀⢳⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡎⣆⠀⠀⠀⠀⠀⠘
+⢻⠀⠈⠰⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⠘⢮⣧⡀⠀⠀⠀⠀
+⠸⡆⠀⠀⠇⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠆⠀⠀⠀⠀⠀⠀⠀⠙⠳⣄⡀⢢⡀
+ oregairu */ 
+#include "bits/stdc++.h"
+using namespace std;
+#define ll long long
+#define fl i,a,b for(int i=a;i<b;i++)
+#define co cout<<
+#define ci cin>>
+#define rep(i,x,n) for(int i = x; i < n; i++) 
+#define rev(i,n,x) for(int i = n; i >= x; i--)
+#define ff            first
+#define ss            second
+#define vecll vector<long long>
+#define pii pair<long long ,long long >
+#define pip pair<int,pair<int,int>>
+#define ppp pair<pair<int,int>,pair<int,int>>
+#define inarr(arr,x,n)  for(ll i=x ;i<n;i++) cin >> arr[i];
+#define mpp make_pair
+#define pb                push_back
+#define ppb               pop_back
+#define all(x)          (x).begin(),(x).end()
+#define sz(x)           (x).size()
+#define henshin           cout<<endl;
+#define DEBUG(x) cout << (x) << '\n';
+const ll INF = int(1e9);
+void yn(int x) { if(!x)cout << "NO\n";  else if(x)cout << "YES\n";return; }
+
+const ll N=2e5+5,M=1e9+7,mod=1e9+7;
+  
+
+const int DIV = 1e5;
+
+inline ll ceil(ll x,ll y) {
+    return (x + y - 1) / y;
+}//  whole code of the inline function gets inserted or substituted at the point of inline function call
+ 
+
+void solve() {
+   int T, M; ci T >> M;
+
+    vector<bool> is_seen(M + 1, false);
+    is_seen[0] = true;
+    vector<int> answer(M + 1, -1);
+    answer[0] = 0;
+
+    for (int timestep = 1; timestep <= T; timestep++) {
+        auto new_is_seen = is_seen;
+
+        int t, y; ll x;
+        ci t >> x >> y;
+
+        auto operation = [&] (long long &curr) {
+            if (t == 1) {
+                curr = curr + ceil(x, DIV);
+            } else {
+                curr = ceil(curr * x, DIV);
+            }
+        };
+
+  for (int k = 0; k <= M; k++) {
+            if (is_seen[k]) {
+                long long curr = k;
+                operation(curr);
+
+                for (int a = 1; a <= y;) {
+                    if (curr > M) break;
+                    if (is_seen[curr]) break;
+                    
+                    new_is_seen[curr] = true;
+                    answer[curr] = timestep;
+
+                    a++;
+                    operation(curr);
+                }
+            }
+        }
+
+        is_seen = new_is_seen;
+    }
+
+    for (int i = 1; i <= M; i++)
+        cout << answer[i] << " ";
+
+    cout << endl;
+
+
+
+
+ }
+ 
+int main() {
+#ifdef _DEBUG
+    freopen("input.txt", "r", stdin);
+    int tt = clock();
+#endif
+    ios_base::sync_with_stdio(false);
+    cin.tie(0), cout.tie(0);
+    cout << fixed << setprecision(15);
+    
+    int tc=1;    ci tc;  
+ 
+    while(tc--) { 
+ solve(); 
+      
+#ifdef _DEBUG
+        cerr << "TIME = " << clock() - tt << endl;
+        tt = clock();
+#endif
+    }
+    return 0;
+}
