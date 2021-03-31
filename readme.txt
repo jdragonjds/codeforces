@@ -1,1 +1,3 @@
-someone told me to do this ,push my solved cp on this ,this holds no meaning to anyone but the compiler i guess
+cp started in 4 th sem ,all uploads starts from march,
+march 2021 lockdown -doing 1700-1900 problems 
+april 2021 lockdown -doing algorith now cuz finished everything else
