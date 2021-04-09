@@ -56,15 +56,14 @@ vector<pii> v ;
 { int h=n-1,l=0;
         
     
-    while(h-l!=1){  int mid = (l+ h) / 2;
+    while(h!=l){  int mid = (l+ h) / 2;
     if (key < v[mid].ff)
        h=(mid - 1);
     else if (key > v[mid].ff) 
            l=(mid + 1)  ; 
-    else{v.insert(v.begin() + mid, {key,0});return;
-    }   
-    v.insert(v.begin() + l, {key,0}); 
-}
+ }
+ 
+v.insert(v.begin() + l, {key,0});
 }
 
 
@@ -83,7 +82,7 @@ insertSorted( sz(v),qq[i]); }
   }
 
 
-rep(i,0,sz(v)) if(v[i].ss==0){  co v[i].ff <<endl; return;}
+rep(i,0,sz(v))if(v[i].ss==0){  co v[i].ff <<endl;  return; }
 
  DEBUG(0)
   }
