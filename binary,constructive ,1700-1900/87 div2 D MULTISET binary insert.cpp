@@ -51,40 +51,34 @@ inline void yn(int x) { if(!x)cout << "NO\n";  else if(x)cout << "YES\n";return;
 
 const ll N=3e5+5,M=1e9+7,mod=998244353;
  
-vector<pii> v ;
- void insertSorted(int n, ll key )
-{ int h=n-1,l=0;
-        
-    
-    while(h!=l){  int mid = (l+ h) / 2;
-    if (key < v[mid].ff)
-       h=(mid - 1);
-    else if (key > v[mid].ff) 
-           l=(mid + 1)  ; 
- }
+vector<int> a, k;
+int n, q;
+
+bool lower(int x) {
+        int low = 0;
+        for ( auto i:a) if (i <= x) ++low;    if(x==1)co low;
+        for ( auto i:k) { 
+                if (i >= 0 && i <= x) ++low;
+                if (i < 0 && abs(i) <= low) low--;
+        }
  
-v.insert(v.begin() + l, {key,0});
+        return (low > 0);
 }
 
+void solve() { 
+  cin >> n >> q;
+        a.resize(n);
+        k.resize(q);
+        rep(i,0,n) ci a[i];
+        rep(i,0,n) ci k[i];
 
-void solve() { ll n,q,x; ci n>>q;
-  
-  rep(i,0,n){ci x;v.pb({x,0});}
-  vector<int> qq(q),cq(q,0);
-  rep(i,0,q){ci qq[i];
-    if(qq[i]>0){ 
-insertSorted( sz(v),qq[i]); }
-    else{ 
-        x=-qq[i];
-        rev(j,i-1,0)if(qq[j]>=qq[i] && qq[j]<0){cq[i]=cq[j]+1;  break;}
-    v[x+cq[i]-1].ss=1;
-    }
-  }
-
-
-rep(i,0,sz(v))if(v[i].ss==0){  co v[i].ff <<endl;  return; }
-
- DEBUG(0)
+int L = 0, R = 1e6;
+        while (L + 1 < R) {
+                int M = (L + R) >> 1;
+                lower(M) ? R = M : L = M;
+        }       
+        lower(R) ? cout << R : cout << 0;
+ 
   }
  
 int main() {
