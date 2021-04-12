@@ -1,0 +1,123 @@
+/*     electric love #jdragon
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠤⠖⠚⢉⣩⣭⡭⠛⠓⠲⠦⣄⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢀⡴⠋⠁⠀⠀⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠳⢦⡀⠀⠀⠀⠀
+⠀⠀⠀⠀⢀⡴⠃⢀⡴⢳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣆⠀⠀⠀
+⠀⠀⠀⠀⡾⠁⣠⠋⠀⠈⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢧⠀⠀
+⠀⠀⠀⣸⠁⢰⠃⠀⠀⠀⠈⢣⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣇⠀
+⠀⠀⠀⡇⠀⡾⡀⠀⠀⠀⠀⣀⣹⣆⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⠀
+⠀⠀⢸⠃⢀⣇⡈⠀⠀⠀⠀⠀⠀⢀⡑⢄⡀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇
+⠀⠀⢸⠀⢻⡟⡻⢶⡆⠀⠀⠀⠀⡼⠟⡳⢿⣦⡑⢄⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇
+⠀⠀⣸⠀⢸⠃⡇⢀⠇⠀⠀⠀⠀⠀⡼⠀⠀⠈⣿⡗⠂⠀⠀⠀⠀⠀⠀⠀⢸⠁
+⠀⠀⡏⠀⣼⠀⢳⠊⠀⠀⠀⠀⠀⠀⠱⣀⣀⠔⣸⠁⠀⠀⠀⠀⠀⠀⠀⢠⡟⠀
+⠀⠀⡇⢀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢸⠃⠀
+⠀⢸⠃⠘⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠁⠀⠀⢀⠀⠀⠀⠀⠀⣾⠀⠀
+⠀⣸⠀⠀⠹⡄⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⡞⠀⠀⠀⠸⠀⠀⠀⠀⠀⡇⠀⠀
+⠀⡏⠀⠀⠀⠙⣆⠀⠀⠀⠀⠀⠀⠀⢀⣠⢶⡇⠀⠀⢰⡀⠀⠀⠀⠀⠀⡇⠀⠀
+⢰⠇⡄⠀⠀⠀⡿⢣⣀⣀⣀⡤⠴⡞⠉⠀⢸⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⣧⠀⠀
+⣸⠀⡇⠀⠀⠀⠀⠀⠀⠉⠀⠀⠀⢹⠀⠀⢸⠀⠀⢀⣿⠇⠀⠀⠀⠁⠀⢸⠀⠀
+⣿⠀⡇⠀⠀⠀⠀⠀⢀⡤⠤⠶⠶⠾⠤⠄⢸⠀⡀⠸⣿⣀⠀⠀⠀⠀⠀⠈⣇⠀
+⡇⠀⡇⠀⠀⡀⠀⡴⠋⠀⠀⠀⠀⠀⠀⠀⠸⡌⣵⡀⢳⡇⠀⠀⠀⠀⠀⠀⢹⡀
+⡇⠀⠇⠀⠀⡇⡸⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠮⢧⣀⣻⢂⠀⠀⠀⠀⠀⠀⢧
+⣇⠀⢠⠀⠀⢳⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡎⣆⠀⠀⠀⠀⠀⠘
+⢻⠀⠈⠰⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⠘⢮⣧⡀⠀⠀⠀⠀
+⠸⡆⠀⠀⠇⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠆⠀⠀⠀⠀⠀⠀⠀⠙⠳⣄⡀⢢⡀
+ oregairu */ 
+#include "bits/stdc++.h"
+using namespace std;
+#define ll long long
+#define fl i,a,b for(int i=a;i<b;i++)
+#define co cout<<
+#define ci cin>>
+#define rep(i,x,n) for(long long i = x; i < n; i++) 
+#define rev(i,n,x) for(int i = n; i >= x; i--)
+#define ff            first
+#define ss            second
+#define vecll vector<long long>
+#define pii pair<long long ,long long >
+#define pip pair<int,pair<int,int>>
+#define ppp pair<pair<int,int>,pair<int,int>>
+#define inarr(arr,x,n)  for(ll i=x ;i<n;i++) cin >> arr[i];
+#define carr(v,x,n)  for(ll i=x ;i<n;i++) cout << v[i]-v[i-1]<<" ";
+#define mpp make_pair
+#define pb               push_back
+#define ppb               pop_back
+#define all(x)          (x).begin(),(x).end()
+#define sz(x)           (x).size()
+#define henshin           cout<<endl;
+#define DEBUG(x) cout << (x) << '\n';
+#define int long long 
+const ll oo = 1e18;
+inline void yn(int x) { if(!x)cout << "NO\n";  else if(x)cout << "YES\n";return; }
+
+const ll N=1e6+5,M=1e9+7,mod=1e9+7;
+  const int MAXA = 2e5+7; 
+      //vector<int> primes;
+   // int mind[MAXA + 1];
+// map<int,int> xprime;
+ 
+ll dp[MAXA];
+    
+    
+
+void solve() {    
+ ll n,m; ci n>>m;ll ans=0;
+while(n>0)
+        {
+            ll temp = n%10;
+            n=n/10;
+            if(m<10-temp)
+            ans  = (ans +1)%mod ;
+            else if(m==10-temp)
+            ans = (ans +2)%mod ;
+            else
+            {
+                ans = (ans +dp[m-10+temp])%mod ;
+                ans = (ans +dp[m-11+temp])%mod ;
+            }
+        }
+ 
+
+ 
+
+DEBUG(ans)
+
+ }
+ 
+
+
+
+
+
+ 
+signed main() {
+ 
+    ios_base::sync_with_stdio(false);
+    cin.tie(0), cout.tie(0);
+    cout << fixed << setprecision(15);
+
+    for(int i=0;i<9;i++) dp[i]=1;
+    
+    dp[9]=2;
+    for(int i=10;i<=MAXA;i++)
+     dp[i]=(dp[i-9]+dp[i-10])%mod ;
+
+    int tc=1;     ci tc;
+ /* 
+  for (int i = 2; i <= MAXA; ++i) {
+        if (mind[i] == 0) {
+            primes.emplace_back(i);
+            mind[i] = i;
+        }
+        for (auto &x : primes) {
+            if (x > mind[i] || x * i > MAXA) break;
+            mind[x * i] = x;
+        }
+    }
+ */
+ 
+    while(tc--) { 
+ solve(); 
+ 
+    }
+    return 0;
+}
