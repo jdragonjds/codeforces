@@ -63,10 +63,13 @@ rep(i,0,n){ ci a[i];
 }
 
 while(q--){
-    int l,r,ans=1;ci l>>r;
-
-
-
+    int l,r,ans=1,fmax=0;ci l>>r;l--;r--;
+rep(i,l,r+1){
+int f=upper_bound(all(v[a[i]]),r)-lower_bound(all(v[a[i]]),l);
+fmax=max(fmax,f);
+}
+ 
+ans=max(ans, 2*fmax-(r-l+1));
 
 DEBUG(ans)
 }
