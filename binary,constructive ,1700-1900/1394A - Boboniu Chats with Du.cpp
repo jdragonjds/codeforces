@@ -106,9 +106,9 @@ fun=0;
  int k=sz(g);
 rep(i, 1, k+1) {int td=i*(d + 1) -d;
   if (td > n)break;
-  if(n-td>sz(s))continue;
+  if(sz(s)+td+d<n)continue;
     if( td != n)
-      fun = max(fun, g[i-1] + s[n - 1ll * (i - 1) * (d + 1) - 2]);
+      fun = max(fun, g[i-1] + s[min(n - 1ll * (i - 1) * (d + 1) - 2,1ll*sz(s)-1)]);
     else fun=max(fun,g[i-1]);
   }
 
