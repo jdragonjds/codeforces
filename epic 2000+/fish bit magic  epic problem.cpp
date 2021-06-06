@@ -1,82 +1,173 @@
-#include<bits/stdc++.h>
+/*     electric love #jai shree RAM
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠤⠖⠚⢉⣩⣭⡭⠛⠓⠲⠦⣄⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢀⡴⠋⠁⠀⠀⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠳⢦⡀⠀⠀⠀⠀
+⠀⠀⠀⠀⢀⡴⠃⢀⡴⢳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣆⠀⠀⠀
+⠀⠀⠀⠀⡾⠁⣠⠋⠀⠈⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢧⠀⠀
+⠀⠀⠀⣸⠁⢰⠃⠀⠀⠀⠈⢣⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣇⠀
+⠀⠀⠀⡇⠀⡾⡀⠀⠀⠀⠀⣀⣹⣆⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⠀
+⠀⠀⢸⠃⢀⣇⡈⠀⠀⠀⠀⠀⠀⢀⡑⢄⡀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇
+⠀⠀⢸⠀⢻⡟⡻⢶⡆⠀⠀⠀⠀⡼⠟⡳⢿⣦⡑⢄⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇
+⠀⠀⣸⠀⢸⠃⡇⢀⠇⠀⠀⠀⠀⠀⡼⠀⠀⠈⣿⡗⠂⠀⠀⠀⠀⠀⠀⠀⢸⠁
+⠀⠀⡏⠀⣼⠀⢳⠊⠀⠀⠀⠀⠀⠀⠱⣀⣀⠔⣸⠁⠀⠀⠀⠀⠀⠀⠀⢠⡟⠀
+⠀⠀⡇⢀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢸⠃⠀
+⠀⢸⠃⠘⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠁⠀⠀⢀⠀⠀⠀⠀⠀⣾⠀⠀
+⠀⣸⠀⠀⠹⡄⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⡞⠀⠀⠀⠸⠀⠀⠀⠀⠀⡇⠀⠀
+⠀⡏⠀⠀⠀⠙⣆⠀⠀⠀⠀⠀⠀⠀⢀⣠⢶⡇⠀⠀⢰⡀⠀⠀⠀⠀⠀⡇⠀⠀
+⢰⠇⡄⠀⠀⠀⡿⢣⣀⣀⣀⡤⠴⡞⠉⠀⢸⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⣧⠀⠀
+⣸⠀⡇⠀⠀⠀⠀⠀⠀⠉⠀⠀⠀⢹⠀⠀⢸⠀⠀⢀⣿⠇⠀⠀⠀⠁⠀⢸⠀⠀
+⣿⠀⡇⠀⠀⠀⠀⠀⢀⡤⠤⠶⠶⠾⠤⠄⢸⠀⡀⠸⣿⣀⠀⠀⠀⠀⠀⠈⣇⠀
+⡇⠀⡇⠀⠀⡀⠀⡴⠋⠀⠀⠀⠀⠀⠀⠀⠸⡌⣵⡀⢳⡇⠀⠀⠀⠀⠀⠀⢹⡀
+⡇⠀⠇⠀⠀⡇⡸⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠮⢧⣀⣻⢂⠀⠀⠀⠀⠀⠀⢧
+⣇⠀⢠⠀⠀⢳⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡎⣆⠀⠀⠀⠀⠀⠘
+⢻⠀⠈⠰⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⠘⢮⣧⡀⠀⠀⠀⠀
+⠸⡆⠀⠀⠇⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠆⠀⠀⠀⠀⠀⠀⠀⠙⠳⣄⡀⢢⡀
+ oregairu */ 
+#include "bits/stdc++.h"
 using namespace std;
-
 #define ll long long 
-#define mp make_pair
-#define pb push_back
-#define all(x) (x).begin(), (x).end()
+#define co cout<<
+#define ci cin>>
+#define rep(i,x,n) for(long long i = x; i < n; i++) 
+#define rev(i,n,x) for(long long i = n-1; i >= x; --i)
+#define ff            first
+#define ss            second
+#define vecll vector<long long>
+#define pii pair<long long ,long long >
+#define pip pair<int,pair<int,int>>
+#define ppp pair<pair<int,int>,pair<int,int>>
+#define inarr(arr,x,n)  for(ll i=x ;i<n;i++) cin >> arr[i];
+#define inar(ar)  for (auto &i : ar){cin >> i;}
+#define carr(v,x,n)  for(ll i=x ;i<n;i++) cout << v[i]-v[i-1]<<" ";
+#define mpp make_pair
+#define pb                push_back 
+#define ppb               pop_back
+#define pf                push_front
+#define ppf               pop_front
+#define all(x)          (x).begin(),(x).end()
+#define rall(x)          (x).rbegin(),(x).rend()
+#define sz(x)           (x).size()
+#define henshin           cout<<endl;
+#define DEBUG(x) cout << (x) << '\n';
+#define LSB(i) ((i) & -(i))
+#define int long long 
+const ll oo = 1e18;
+inline void yn(int x) { if(!x)co "YES\n"; else if(x)co "NO\n"; return; }
 
-void __print(int x) {cerr << x;}
-void __print(long x) {cerr << x;}
-void __print(long long x) {cerr << x;}
-void __print(unsigned x) {cerr << x;}
-void __print(unsigned long x) {cerr << x;}
-void __print(unsigned long long x) {cerr << x;}
-void __print(float x) {cerr << x;}
-void __print(double x) {cerr << x;}
-void __print(long double x) {cerr << x;}
-void __print(char x) {cerr << '\'' << x << '\'';}
-void __print(const char *x) {cerr << '\"' << x << '\"';}
-void __print(const string &x) {cerr << '\"' << x << '\"';}
-void __print(bool x) {cerr << (x ? "true" : "false");}
+  const int N = 1e5 + 7 ,M=1e6 ,mod=1e9+7,mod1=998244353;
+  const int MAXA = 0; 
+ //int mind[MAXA+5]={0};
+ /*  
+int ques(int t, int i, int j ) {
+//    cout << "? " << t << ' ' << i + 1 << ' ' << j + 1 << ' ' << x << endl;
+ 
+ int val; cin >> val;
+ if (val == -1) exit(0);
+ return val;
+}  
+int binpow (int a, int n) {
+    int res = 1;
+    while (n) {
+        if (n & 1)
+            res = 1ll * res * a % base;
+        a = 1ll * a * a % base;
+        n >>= 1;
+    }
+    return res;
+}
+ 
 
-template<typename T, typename V>
-void __print(const pair<T, V> &x) {cerr << '{'; __print(x.first); cerr << ','; __print(x.second); cerr << '}';}
-template<typename T>
-void __print(const T &x) {int f = 0; cerr << '{'; for (auto &i: x) cerr << (f++ ? "," : ""), __print(i); cerr << "}";}
-void _print() {cerr << "]\n";}
-template <typename T, typename... V>
-void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v...);}
-#ifndef ONLINE_JUDGE
-#define debug(x...) cerr << "[" << #x << "] = ["; _print(x)
-#else
-#define debug(x...)
-#endif
+ll gcd(ll u, ll v)
+{
+    int shift;
+    if (u == 0) return v;
+    if (v == 0) return u;
+    shift = __builtin_ctz(u | v);
+    u >>= __builtin_ctz(u);
+    do {
+        v >>= __builtin_ctz(v);
+        if (u > v) {
+            ll t = v;
+            v = u;
+            u = t;
+        }  
+        v = v - u;
+    } while (v != 0);
+    return u << shift;
+}*/
 
-double C2(ll x) {
-	return (x * (x - 1)) / 2;
+int n, m,k=0,mik=oo,mak=0,ans=0; 
+ double a[20][20];
+double dp[1 << 20];
+int bit_count(int n)
+{
+    int sum = 0;
+    while(n)
+    {
+        if(n & 1) sum ++;
+        n >>= 1;
+    }
+    return sum;
 }
 
-int main() {
-	ios::sync_with_stdio(0); cin.tie(0);
+void solve(){  
+ cin >> n;
+    for(int i = 1;i <= n; ++i)
+    {
+        for(int j = 1;j <= n; ++j)
+        {
+            cin >> a[i][j];
+        }
+    }
+    dp[(1 << n) - 1] = 1;
+    
+    for(int i = (1 << n) - 1;i >= 1; --i)
+    {
+        int cnt = bit_count(i);
+        if(cnt == 1) continue;
+        double p = 2 * dp[i] / ((cnt - 1) * cnt);
+        for(int j = 1;j <= n; ++j)
+        {
+            if(i & (1 << (j - 1)))
+            {
+                for(int k = 1;k <= n; ++k)
+                {
+                    if(i & (1 << (k - 1)))
+                    {
+                        dp[i ^ (1 << (k - 1))] += p * a[j][k];
+                    }
+                }
+            }
+        }
+    }
+    for(int i = 0;i < n; ++i)
+    {
+        printf("%.6lf ",dp[1 << i]);
+    }
+ 
+ 
 
-	int n; cin >> n;
+ }//solve
 
-	double p[n][n];
-
-	for (int i = 0; i < n; ++i) {
-		for (int j = 0; j < n; ++j) {
-			cin >> p[i][j];
-		}
-	}
-
-	double dp[1 << n];
-	for (int i = 0; i < (1 << n); ++i) {
-		dp[i] = 0;
-	}
-	dp[(1 << n) - 1] = 1.;
-
-	for (int mask = (1 << n) - 1; mask >= 0; --mask) {
-		int set_bits = __builtin_popcount(mask);
-		if (set_bits == 1) continue;
-		for (int b = 0; b < n; ++b) {
-			double val = 0.;
-			for (int c = 0; c < n; ++c) {
-				if (((1 << b) & mask) && ((1 << c) & mask) && c != b) {
-					val += (dp[mask] * p[c][b]) / C2(set_bits);
-				}
-			}
-			dp[(mask ^ (1 << b))] += val;
-		}
-	}
-
-	cout.precision(10);
-	cout << fixed;
-	for (int i = 0; i < n; ++i) {
-		cout << dp[1 << i] << " ";
-	}
-	cout << "\n";
-
-
-	return 0;
-}
+signed main() {
+ 
+    ios_base::sync_with_stdio(false);
+    cin.tie(0), cout.tie(0);
+    cout << fixed << setprecision(15);
+ /*
+for (int i = 2; i * i < MAXA; i++) {
+    if (mind[i] == 0) {
+      mind[i] = i;
+      for (int j = i * i; j < MAXA; j += i) {
+        if (mind[j] == 0) {
+          mind[j] = i;
+        }
+      }
+    }
+  }
+ */
+   
+int tc=1;    //ci tc; 
+ 
+while(tc--) {
+solve();
+}return 0;} 
