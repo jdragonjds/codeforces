@@ -80,28 +80,32 @@ ll gcd(ll u, ll v)
     return u << shift;
 }
 */ 
-ll n,ans=0 ,tmp,m,q ;string s;  
-vector<vector<int>> dp;
-int calc(int l, int r){ 
-    int &res = dp[l][r];
-    if(res != -1) return res;
-    
-    if(l > r) return res = 0;
-    if(l == r) return res = 1;
-    
-    res = 1 + calc(l + 1, r);
-    for(int i = l + 1; i <= r; ++ i)
-        if(s[l] == s[i])
-            res = min(res, calc(l + 1, i - 1) + calc(i, r));
-    return res;
-}
+ll n,ans=0 ,tmp,m,q ; 
+vector<int>  p ;
+ 
+
 void solve(){
 cin>> n ; 
-cin>>s;
+string s;cin>>s;
  s=' '+s;
- dp=vector<vector<int>>(n+1,vector<int>(n+1,-1));
+ vector<vector<int>> dp(n+1,vector<int>(n+1,n));
+rep(i,1,n+1)dp[i][i]=1;
+
+rep(g,2,n+1) 
+rep(i,1,n+2-g){
+   int j = i + g - 1; 
+   dp[i][j] = 1 + dp[i + 1][j];
+   rep( k,i + 1,j+1)
+       if(s[k] == s[i]) {
+         int tmp = dp[k][j];
+         if(k != i + 1) tmp += dp[i + 1][k - 1];
+         dp[i][j] = min(dp[i][j], tmp);
+                }
+           
+
+}
  
-DEBUG(calc(1, n))
+DEBUG(dp[1][n])
 }
 
 signed main(){   
