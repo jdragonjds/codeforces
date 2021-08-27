@@ -12,8 +12,7 @@ using namespace std;
 typedef long long ll;
 typedef pair<long long, long long> pll;
 
-const int N = 505;
-
+const int N = 1e6+9;
 
 void solve(){
  string s;cin>>s;
@@ -29,21 +28,16 @@ rep(i,1,n) {
             j++;
         pi[i] = j;
     }
-    c=pi[n-1];int cj=c;
-    while(c>0){
-        cj=c;
-        c=pi[c-1];
-    }
-    //cout<<cj<<endl;
-    rep(i,cj,n-1){
-        //cout<<pi[i]<<" ";
-        if(pi[i]==cj){f=1;break;}
+    int ans=0;
+    c=pi[n-1];
+    rep(i,1,n-1){
+        if(pi[i]<=c && s[i]==s[n-1]){f=1;ans=max(ans,pi[i]);}
         }
-    if(f==0 || cj==0){
+    if(f==0 || ans==0){
         cout<< "Just a legend" ;
     }
     else{
-        rep(i,0,cj)cout<<s[i];
+        rep(i,0,ans)cout<<s[i];
     } 
 }
 
