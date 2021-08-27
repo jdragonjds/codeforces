@@ -30,8 +30,14 @@ rep(i,1,n) {
     }
     int ans=0;
     c=pi[n-1];
+    set<int> cj;
+    while(c>0){
+        cj.insert(c);
+        c=pi[c-1];
+    }
+    
     rep(i,1,n-1){
-        if(pi[i]<=c && s[i]==s[n-1]){f=1;ans=max(ans,pi[i]);}
+        if(cj.find(pi[i])!=cj.end()){f=1;ans=max(ans,pi[i]);}
         }
     if(f==0 || ans==0){
         cout<< "Just a legend" ;
